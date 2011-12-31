@@ -58,19 +58,6 @@ public class MeteoUB extends Activity {
 				final TextView temperatura = (TextView) findViewById(R.id.temperatura);
 				
 		        temperatura.setText(tempString+"¼C");
-				
-				
-				/*
-				NodeList nl = docEle.getElementsByTagName("dades");
-				if(nl != null && nl.getLength() > 0) {
-					for(int i = 0; i < nl.getLength(); i++){
-						Element dada = (Element)nl.item(i);
-						Element temp = (Element)dada.getElementsByTagName("temperature");
-						String temperaturaString = temp.getFirstChild().getNodeValue();
-					}
-				}
-				*/
-				
 			}
 		} catch(MalformedURLException e) {
 			e.printStackTrace();
