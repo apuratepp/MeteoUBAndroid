@@ -11,12 +11,10 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-/*
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
-*/
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -24,6 +22,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 // import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import java.util.TimeZone;
+import java.util.SimpleTimeZone;
 
 public class MeteoUB extends Activity {
     /** Called when the activity is first created. */
@@ -60,11 +60,26 @@ public class MeteoUB extends Activity {
 				
 				Element tempElement = (Element)docEle.getElementsByTagName("temperature").item(0);
 				String tempString = tempElement.getFirstChild().getNodeValue();
-				final TextView temperatura = (TextView) findViewById(R.id.temperatura);
+				Element dateElement = (Element)docEle.getElementsByTagName("datetime").item(0);
+				String dateString = dateElement.getFirstChild().getNodeValue();
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss'+00:00'");
 				
-		        temperatura.setText(tempString+"¼C");
+				// get the supported ids for GMT-08:00 (Pacific Standard Time)
+				String[] ids = TimeZone.getAvailableIDs(1 * 60 * 60 * 1000);
+				SimpleTimeZone cet = new SimpleTimeZone(1 * 60 * 60 * 1000, ids[0]);
+				
+				Date date = new GregorianCalendar(cet).getTime();
+				try{
+					date = sdf.parse(dateString);
+				} catch (ParseException e){
+					e.printStackTrace();
+				}
+				
+				
+				final TextView temperatura = (TextView) findViewById(R.id.temperatura);
+				temperatura.setText(tempString+"¼C");
 		        final TextView comentari = (TextView) findViewById(R.id.comentari);
-		        comentari.setText("");
+		        comentari.setText(date.toLocaleString());
 			}
 		} catch(MalformedURLException e) {
 			e.printStackTrace();
