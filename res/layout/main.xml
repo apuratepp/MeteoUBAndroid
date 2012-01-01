@@ -3,15 +3,20 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/barcelonasunset"
     >
+
+
 <TextView 
-	android:text="@string/hello" 
-	android:textSize="100sp" 
-	android:textColor="#ffb500"
-	android:gravity="center_horizontal"
+	android:id="@+id/comentari" 
 	android:layout_height="wrap_content" 
-	android:layout_width="fill_parent" 
-	android:id="@+id/temperatura">
+	android:text="Loading..." 
+	android:textColor="#ffffff"
+	android:layout_width="match_parent" 
+	android:gravity="center_horizontal">
 </TextView>
 
+<TextView 
+	android:layout_height="wrap_content" 
+	android:id="@+id/temperatura" android:textColor="#ffffff" android:gravity="center_horizontal" android:layout_width="fill_parent" android:text="@string/hello" android:textSize="100sp" android:textStyle="bold"></TextView>
 </LinearLayout>

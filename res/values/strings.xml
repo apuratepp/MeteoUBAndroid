@@ -2,4 +2,5 @@
 <resources>
     <string name="hello">26.4</string>
     <string name="app_name">MeteoUB</string>
+    <string name="menu_item">Refrescar</string>
 </resources>
