@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/barcelonasunset"
+    android:background="@drawable/meteoubcolor"
     >
 
 
@@ -11,12 +11,11 @@
 	android:id="@+id/comentari" 
 	android:layout_height="wrap_content" 
 	android:text="Loading..." 
-	android:textColor="#ffffff"
+	android:textColor="#000000"
 	android:layout_width="match_parent" 
 	android:gravity="center_horizontal">
 </TextView>
 
-<TextView 
-	android:layout_height="wrap_content" 
-	android:id="@+id/temperatura" android:textColor="#ffffff" android:gravity="center_horizontal" android:layout_width="fill_parent" android:text="@string/hello" android:textSize="100sp" android:textStyle="bold"></TextView>
+<TextView android:textColor="#000000" android:text="@string/hello" android:layout_height="wrap_content" android:id="@+id/temperatura" android:textSize="50sp" android:layout_width="fill_parent" android:gravity="center_horizontal" android:textStyle="bold"></TextView>
+
 </LinearLayout>
