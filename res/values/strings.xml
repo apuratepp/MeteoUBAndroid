@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">26.4</string>
+    <string name="hello">26.4ºC</string>
     <string name="app_name">MeteoUB</string>
     <string name="menu_item">Refrescar</string>
 </resources>

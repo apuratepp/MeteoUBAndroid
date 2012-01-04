@@ -9,13 +9,22 @@
 
 <TextView 
 	android:id="@+id/comentari" 
-	android:layout_height="wrap_content" 
 	android:text="Loading..." 
-	android:textColor="#000000"
+	android:textColor="#d6e9ff"
 	android:layout_width="match_parent" 
+	android:layout_height="350px"
 	android:gravity="center_horizontal">
 </TextView>
 
-<TextView android:textColor="#000000" android:text="@string/hello" android:layout_height="wrap_content" android:id="@+id/temperatura" android:textSize="50sp" android:layout_width="fill_parent" android:gravity="center_horizontal" android:textStyle="bold"></TextView>
+<TextView 
+	android:textColor="#ffb500" 
+	android:text="@string/hello" 
+	android:id="@+id/temperatura" 
+	android:textSize="50sp" 
+	android:layout_height="wrap_content" 
+	android:layout_width="380px" 
+	android:gravity="right"
+	android:textStyle="bold">
+</TextView>
 
 </LinearLayout>
