@@ -3,7 +3,7 @@
       package="com.equip9.meteoub"
       android:versionCode="1"
       android:versionName="1.0">
-    <application android:icon="@drawable/icon" android:label="@string/app_name">
+    <application android:icon="@drawable/beosapp" android:label="@string/app_name">
         <activity android:name=".MeteoUB"
                   android:label="@string/app_name">
             <intent-filter>
@@ -11,6 +11,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service android:enabled="true" android:name=".MeteoUBService" />
     </application>
 	<uses-sdk android:minSdkVersion="8" />
 	<uses-permission android:name="android.permission.INTERNET"/>

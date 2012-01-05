@@ -24,6 +24,7 @@ import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 import java.util.TimeZone;
 import java.util.SimpleTimeZone;
+import android.content.Intent;
 
 public class MeteoUB extends Activity {
     /** Called when the activity is first created. */
@@ -95,8 +96,14 @@ public class MeteoUB extends Activity {
 	}
 	
 	private void mostrarInfo() {
+		//final TextView comentari = (TextView) findViewById(R.id.comentari);
+        //comentari.setText("MŽs informaci—: apuratepp@gmail.com");
+        startService(new Intent(this, MeteoUBService.class));
+	}
+	
+	public void mostrarComentari(String comentariString){
 		final TextView comentari = (TextView) findViewById(R.id.comentari);
-        comentari.setText("MŽs informaci—: apuratepp@gmail.com");
+		comentari.setText(comentariString);
 	}
 	
 	static final private int MENU_REFRESH = Menu.FIRST;
@@ -113,8 +120,7 @@ public class MeteoUB extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
     	case MENU_REFRESH:
-    		final TextView comentari = (TextView) findViewById(R.id.comentari);
-    		comentari.setText("Connectant amb MeteoUB...");
+    		mostrarComentari("Connectat amb MeteoUB...");
     		refreshTemperatura();
             return true;
     	case MENU_INFO:
